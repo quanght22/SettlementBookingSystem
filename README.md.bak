@@ -1,0 +1,25 @@
+# Settlement Booking API
+This API enables one-hour appointment bookings for InfoTrack's settlement service, which operates with a fixed capacity of up to **4 simultaneous bookings per time slot**.
+
+## Requirements
+- .NET 5.0 SDK or later
+- Visual Studio 2022 or VS Code
+
+## Versions
+
+1. Mediator Implementation
+
+`BookingController` offers an implementation using the mediator pattern, and the data is stored in a ConcurrentDictionary<TimeSpan, List<Booking>> for efficient access
+This implementatrion also provides unit tests
+
+## How to Run
+
+dotnet build
+dotnet run --project SettlementBookingSystem
+
+## How to execute
+
+```
+curl -X POST "https://localhost:5001/Booking" -H  "accept: text/plain" -H  "Content-Type: application/json" -d "{\"name\":\"Jonh\",\"bookingTime\":\"09:30\"}"
+
+```
